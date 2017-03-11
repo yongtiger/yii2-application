@@ -1,4 +1,4 @@
-# Yii2-application releas version 1.0.0
+# Yii2-application releas version 1.0.1 (fix:bug:i18n is invalid after Application::remoteAppCall('app-frontend'))
 
 [![Latest Stable Version](https://poser.pugx.org/yongtiger/yii2-application/v/stable)](https://packagist.org/packages/yongtiger/yii2-application)
 [![Total Downloads](https://poser.pugx.org/yongtiger/yii2-application/downloads)](https://packagist.org/packages/yongtiger/yii2-application) 
