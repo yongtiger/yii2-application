@@ -82,8 +82,6 @@ class Application extends \yii\web\Application
             $yiiApp = Yii::$app;
             ///[1.0.1 (fix:bug:i18n is invalid after Application::remoteAppCall('app-frontend'))]
             $yiiAliases = Yii::$aliases;
-            $yiiClassMap = Yii::$classMap;
-            $yiiContainer =Yii::$container;
 
             // Create empty config array.
             $config = [];
@@ -112,13 +110,12 @@ class Application extends \yii\web\Application
             Yii::$app = $yiiApp;
             ///[1.0.1 (fix:bug:i18n is invalid after Application::remoteAppCall('app-frontend'))]
             Yii::$aliases = $yiiAliases;    
-            Yii::$classMap = $yiiClassMap;
-            Yii::$container = $yiiContainer;
 
             // Dump the temp app
-            unset($yiiApp, $yiiAliases, $yiiClassMap, $yiiContainer);    ///[1.0.1 (fix:bug:i18n is invalid after Application::remoteAppCall('app-frontend'))]
+            unset($yiiApp, $yiiAliases);    ///[1.0.1 (fix:bug:i18n is invalid after Application::remoteAppCall('app-frontend'))]
+            
+        } else {
+            call_user_func($callback, Yii::$app);
         }
-
-        call_user_func($callback, Yii::$app);
     }
 }
