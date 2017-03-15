@@ -25,7 +25,11 @@ use yii\helpers\ArrayHelper;
 class Application extends \yii\web\Application
 {
     static $remoteAppConfigs = 'yongtiger.application.remoteAppConfigs';
-    static $appClass = 'yongtiger\\application\\Application';
+
+    /**
+     * @var bool Whether is or not admin end.
+     */
+    public $isAdminEnd;
 
     /**
      * @inheritdoc
@@ -75,7 +79,7 @@ class Application extends \yii\web\Application
                 $appClass = Yii::$app->params[static::$remoteAppConfigs][$appId]['class'];
                 unset(Yii::$app->params[static::$remoteAppConfigs][$appId]['class']);
             } else {
-                $appClass = static::$appClass;
+                $appClass = get_called_class();
             }
 
             // Save the original app to a temp app.

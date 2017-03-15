@@ -1,5 +1,8 @@
 # Development roadmap
 
+## releas version 1.1.0 (#ADD backend:isAdminEnd)
+
+
 ## releas version 1.0.1 (fix:bug:i18n is invalid after Application::remoteAppCall('app-frontend'))
 
 
